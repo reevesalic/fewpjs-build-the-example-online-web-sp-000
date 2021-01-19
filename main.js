@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heart.addEventListener("click", (e) => {
       
       mimicServerCall()
-        .then() => {
+        .then(() => {
 
         if (heart.innerHTML == EMPTY_HEART) {
         heart.innerHTML = FULL_HEART
@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(error => {
         modal.hidden = true
         const modalMessage = document.querySelector("#modal-message")
-
+        modalMessage.innerText = error
+        setTimeout(() => {
+          modal.hidden = false
+        }, 5000)
       })
     })
   }
@@ -33,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // fetch()
 
-}
+
 
 
 
